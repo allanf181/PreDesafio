@@ -1,6 +1,6 @@
 package predesafio
 
-class Colecao(override var codigo: Int, var livros: MutableList<String>, var descricao: String) : IProduto {
+class Colecao(override var codigo: Int, var livros: MutableList<Livro>, var descricao: String) : IProduto {
     override var quantidade = 0
     override var preco = 0.0
 
@@ -11,5 +11,5 @@ class Colecao(override var codigo: Int, var livros: MutableList<String>, var des
 
         return true
     }
-
+s
 }
