@@ -28,13 +28,24 @@ class Livraria {
     }
 
     fun consultarLivroPorCodigo(codigo: Int): IProduto? {
-        val livro = Livro(codigo,"","",0)
+        class dummy(override var codigo: Int) : IProduto{
+            override var preco: Double = 0.0
+            override var quantidade: Int = 0
+            override fun equals(other: Any?): Boolean {
+                if (this === other) return true
+                if (other !is IProduto) return false
+                if (codigo != other.codigo) return false
+
+                return true
+            }
+        }
+        val livro = dummy(codigo)
         val index = produtos.indexOf(livro)
-        if(index > 0){
-            return produtos[index]
+        return if(index >= 0){
+            produtos[index]
         } else {
             println("Livro não encontrado")
-            return null
+            null
         }
     }
 
