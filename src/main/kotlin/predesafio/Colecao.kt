@@ -11,5 +11,4 @@ class Colecao(override var codigo: Int, var livros: MutableList<Livro>, var desc
 
         return true
     }
-s
 }
