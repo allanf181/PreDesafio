@@ -1,0 +1,4 @@
+package predesafio
+
+interface IProduto {
+}
