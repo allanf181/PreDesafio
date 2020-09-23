@@ -39,14 +39,12 @@ class Livraria {
                 return true
             }
         }
-        val livro = dummy(codigo)
-        val index = produtos.indexOf(livro)
-        return if(index >= 0){
-            produtos[index]
-        } else {
+        val fake = dummy(codigo)
+        val produto = produtos.find { it == fake }
+        if(produto == null){
             println("Livro não encontrado")
-            null
         }
+        return produto
     }
 
     fun efetuarVenda(codigo: Int){
